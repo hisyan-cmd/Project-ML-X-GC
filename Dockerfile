@@ -1,10 +1,8 @@
-FROM node:16
-
+FROM node:18.17.1
 WORKDIR /app
-ENV PORT 8080
-ENV HOST 0.0.0.0
-
+ENV PORT 3000
+ENV MODEL_URL 'https://storage.googleapis.com/model-storage-submission/model-in-prod/model.json'
 COPY . .
 RUN npm install
-EXPOSE 8080
+EXPOSE 3000
 CMD [ "npm", "run", "start"]
